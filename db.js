@@ -7,8 +7,7 @@ module.exports = async function connection() {
             useCreateIndex: true,
             useUnifiedTopology: true,
         };
-        console.log("mongodb+srv://anandpatel95374:MkOTrhxwClCVtL1s@cluster0.iflrhoh.mongodb.net/upload?retryWrites=true&w=majority")
-        await mongoose.connect("mongodb+srv://anandpatel95374:MkOTrhxwClCVtL1s@cluster0.iflrhoh.mongodb.net/upload?retryWrites=true&w=majority", connectionParams);
+        await mongoose.connect(process.env.DATABASE_URI, connectionParams);
         console.log("connected to database");
     } catch (error) {
         console.log(error);
